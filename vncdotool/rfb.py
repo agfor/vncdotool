@@ -147,6 +147,7 @@ class RFBClient(Protocol):
             self._packet_len = len(buffer)
             self._handler = self._handleExpected
             self._version = version
+            self._version_server = version_server
             if version < 3.7:
                 self.expect(self._handleAuth, 4)
             else:
